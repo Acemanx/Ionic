@@ -123,6 +123,8 @@ app.use(function (req, res, next) {
 
     // Pass to next layer of middleware
     next();
+  });
 });
+
 // Start the server
 app.listen(port);
