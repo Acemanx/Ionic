@@ -55,7 +55,15 @@ EmpleadosRoute.get(function(req, res) {
       res.send(err);
 
     res.json(empleados);
+
   });
+    res.header('Access-Control-Allow-Origin: *');
+  //Para que funcione a nivel de Ajax
+  res.header('Access-Control-Allow-Headers' , 'Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method  ');
+  //Indicamos los metodos que se van a soportar
+  res.header('Access-Control-Allow-Methods' , 'GET, POST, OPTIONS, PUT, DELETE');
+
+  res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
 });
 var empleadoRoute = router.route('/empleados/:empleado_id');
 
