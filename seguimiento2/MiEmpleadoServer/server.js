@@ -103,6 +103,7 @@ empleadoRoute.put(function(req, res) {
 });
 ///api/empleado/:empleado_id para DELETE
 empleadoRoute.delete(function(req, res) {
+  //prueba
   // Use the Beer model to find a specific beer and remove it
   Empleado.findByIdAndRemove(req.params.empleado_id, function(err) {
     if (err)
