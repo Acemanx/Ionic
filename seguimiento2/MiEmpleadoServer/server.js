@@ -55,8 +55,8 @@ EmpleadosRoute.get(function(req, res) {
       res.send(err);
 
     res.json(empleados);
-
   });
+});
 var empleadoRoute = router.route('/empleados/:empleado_id');
 
 // Create endpoint /api/empleados/:empleados for GET
@@ -95,7 +95,6 @@ empleadoRoute.put(function(req, res) {
 });
 ///api/empleado/:empleado_id para DELETE
 empleadoRoute.delete(function(req, res) {
-  //prueba
   // Use the Beer model to find a specific beer and remove it
   Empleado.findByIdAndRemove(req.params.empleado_id, function(err) {
     if (err)
@@ -124,7 +123,6 @@ app.use(function (req, res, next) {
     // Pass to next layer of middleware
     next();
   });
-});
 
 // Start the server
 app.listen(port);
