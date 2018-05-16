@@ -2,10 +2,9 @@ var express  = require('express');
 var app      = express();
 var base64Img = require('base64-img');
 var bodyParser = require('body-parser');
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({
-  extended: true
-}));
+
+app.use(bodyParser.json({limit: '50mb'}));
+app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
 //var port = process.env.PORT || 3001;
 var port = 3001;
 // Create our Express router
