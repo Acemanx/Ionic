@@ -6,8 +6,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
 }));
-var port = process.env.PORT || 3001;
-
+//var port = process.env.PORT || 3001;
+var port = 3001;
 // Create our Express router
 var router = express.Router();
 
