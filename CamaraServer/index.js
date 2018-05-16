@@ -20,7 +20,10 @@ CamaraRoute.post(function(req, res) {
      var camaraimage=req.body.image;
 
      base64Img.img(camaraimage, '../CamaraServer', Date.now(), function(err, filepath) {
-      res.json({ message: 'imagen añadida' });	
+       if (err)
+      res.send(err);
+
+    res.json({ message: 'imagen añadida', data: filepath });
      });
   // Save  and check for errors
   // 
